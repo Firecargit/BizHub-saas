@@ -1,0 +1,74 @@
+# Entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Dependencias
+node_modules/
+*/node_modules/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+docker-data/
+
+# Backend específico
+dist/
+coverage/
+*.pid
+
+# Frontend específico (Vue/React)
+dist/
+build/
+*.js.map
+*.css.map
+
+# Base de datos
+*.sqlite
+*.sql
+*-dump.sql
+
+# Archivos de desarrollo
+*.bak
+*.tmp
+*.patch
+
+# Testing
+cypress/videos/
+cypress/screenshots/
+
+# Paquetes
+*.tgz
+
+# Misceláneo
+.sass-cache/
+/connect.lock
+/typings/
+/.next/
+/out/
+/serverless/
+/.cache/
+/.serverless/
+/.fusebox/
+/.dynamodb/

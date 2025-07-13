@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - BizHub</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/logo-icon.svg" alt="BizHub" width="40">
+                <span>BizHub</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Citas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-store"></i>
+                            <span>Mi Página</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-users"></i>
+                            <span>Clientes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analíticas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cog"></i>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="images/user-avatar.jpg" alt="Usuario" width="40">
+                <div class="user-info">
+                    <strong>Nombre Usuario</strong>
+                    <small>Plan Básico</small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <div class="user-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="help-btn">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Sections -->
+            <div class="dashboard-sections">
+                <!-- Welcome Banner -->
+                <section class="welcome-banner">
+                    <h1>Bienvenido de vuelta, [Nombre]</h1>
+                    <p>Aquí tienes un resumen de tu actividad reciente</p>
+                </section>
+
+                <!-- Stats Cards -->
+                <section class="stats-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Citas Hoy</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Ingresos</h3>
+                            <p>$1,250.00</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Nuevos Clientes</h3>
+                            <p>5</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Calificación</h3>
+                            <p>4.8/5</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Page Builder Section -->
+                <section class="page-builder">
+                    <div class="section-header">
+                        <h2>Constructor de Página</h2>
+                        <button class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                    <div class="builder-container">
+                        <!-- Elements Panel -->
+                        <div class="elements-panel">
+                            <h3>Elementos</h3>
+                            <div class="elements-grid">
+                                <div class="element" draggable="true">
+                                    <i class="fas fa-heading"></i>
+                                    <span>Título</span>
+                                </div>
+                                <div class="element" draggable="true">
+                                    <i class="fas fa-paragraph"></i>
+                                    <span>Texto</span>
+                                </div>
+                                <div class="element" draggable="true">
+                                    <i class="fas fa-image"></i>
+                                    <span>Imagen</span>
+                                </div>
+                                <div class="element" draggable="true">
+                                    <i class="fas fa-list-ul"></i>
+                                    <span>Servicios</span>
+                                </div>
+                                <div class="element" draggable="true">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Agendamiento</span>
+                                </div>
+                                <div class="element" draggable="true">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Ubicación</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preview Panel -->
+                        <div class="preview-panel" id="dropzone">
+                            <div class="preview-header">
+                                <h3>Vista Previa</h3>
+                                <div class="device-options">
+                                    <button class="active"><i class="fas fa-mobile-alt"></i></button>
+                                    <button><i class="fas fa-tablet-alt"></i></button>
+                                    <button><i class="fas fa-desktop"></i></button>
+                                </div>
+                            </div>
+                            <div class="preview-content">
+                                <!-- Aquí irían los elementos arrastrados -->
+                                <div class="placeholder">
+                                    <i class="fas fa-arrow-alt-circle-down"></i>
+                                    <p>Arrastra elementos aquí para construir tu página</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Settings Panel -->
+                        <div class="settings-panel">
+                            <h3>Configuración</h3>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label>Título de la Página</label>
+                                    <input type="text" value="Mi Negocio">
+                                </div>
+                                <div class="form-group">
+                                    <label>Color Principal</label>
+                                    <input type="color" value="#4f46e5">
+                                </div>
+                                <div class="form-group">
+                                    <label>Logo</label>
+                                    <div class="upload-area">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Arrastra tu logo aquí o haz clic</p>
+                                        <input type="file" accept="image/*">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Plantilla</label>
+                                    <select>
+                                        <option>Moderno</option>
+                                        <option>Clásico</option>
+                                        <option>Minimalista</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
