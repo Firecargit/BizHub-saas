@@ -424,3 +424,154 @@ body {
 .upload-area input {
     display: none;
 }
+
+/* Drag & Drop Styles */
+.drag-active {
+    border-color: var(--primary) !important;
+    background-color: rgba(79, 70, 229, 0.05);
+}
+
+.dropped-element {
+    position: relative;
+    background-color: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.dropped-element:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.element-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+.element-delete {
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+}
+
+.element-delete:hover {
+    color: #ef4444;
+}
+
+[contenteditable="true"] {
+    outline: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+[contenteditable="true"]:focus {
+    background-color: var(--light);
+    box-shadow: 0 0 0 1px var(--primary-light);
+}
+
+.image-upload {
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed var(--light-gray);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-upload i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.image-upload p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.image-upload img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.services-list {
+    margin-top: 10px;
+}
+
+.service-item {
+    background-color: var(--light);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.service-item h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.service-item p {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.service-item span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.add-service {
+    width: 100%;
+    background-color: var(--light);
+    border: 1px dashed var(--gray);
+    color: var(--gray);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-service:hover {
+    background-color: var(--light-gray);
+}
+
+.remove-service {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 2px;
+}
+
+.calendar-widget, .map-widget {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 5px;
+}
+
+.calendar-widget i, .map-widget i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.calendar-widget p, .map-widget p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
