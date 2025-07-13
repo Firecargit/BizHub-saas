@@ -293,4 +293,78 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.backgroundColor = '#4f46e5';
         }, 2000);
     });
+
+    // Auth Simulation
+    let currentUser = {
+        id: 'user123',
+        plan: 'basic'
+    };
+
+    // Page Structure
+    let pageStructure = JSON.parse(localStorage.getItem(`page_${currentUser.id}`)) || [];
+
+    // Save Function
+    function savePage() {
+        const elements = Array.from(document.querySelectorAll('.dropped-element')).map(el => {
+            return {
+                type: el.dataset.type,
+                content: el.innerHTML,
+                position: {
+                    x: el.style.left,
+                    y: el.style.top
+                }
+            };
+        });
+  
+        // Simulate API call
+        fetch('/api/save-page', {
+            method: 'POST',
+            body: JSON.stringify({ userId: currentUser.id, elements })
+        })
+        .then(() => {
+            localStorage.setItem(`page_${currentUser.id}`, JSON.stringify(elements));
+            showNotification('Página guardada correctamente');
+        });
+    }
+
+    // Load Function
+    function loadPage() {
+        if (pageStructure.length > 0) {
+            document.querySelector('.placeholder').remove();
+            pageStructure.forEach(item => {
+                const element = document.createElement('div');
+                element.className = 'dropped-element';
+                element.dataset.type = item.type;
+                element.style.left = item.position.x;
+                element.style.top = item.position.y;
+                element.innerHTML = item.content;
+                document.querySelector('.preview-content').appendChild(element);
+            });
+        }
+    }
+
+        // Init
+    document.addEventListener('DOMContentLoaded', () => {
+        loadPage();
+  
+        // Save Button
+        document.querySelector('.btn-primary').addEventListener('click', savePage);
+  
+        // Image Upload Handler
+        document.body.addEventListener('change', e => {
+            if (e.target.matches('input[type="file"]')) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = event => {
+                        e.target.closest('.image-upload').innerHTML = `
+                            <img src="${event.target.result}" alt="Uploaded">
+                             <button class="replace-image">Cambiar</button>
+                        `;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+    });
 });
